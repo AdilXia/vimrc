@@ -1,0 +1,52 @@
+if &compatible
+  set nocompatible
+end
+
+filetype off				" required
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Let Vundle manage bundles
+Bundle 'gmarik/vundle'
+
+"bundle分为三类：
+"1. 在Github vim-scripts 用户下的repos,只需要写出repos名称
+"2. 在Github其他用户下的repos, 需要写出”用户名/repos名”
+"3. 不在Github上的插件，需要写出git全路径
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" original repos on github
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"状态栏,自带buffer,秒杀powerline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+"对齐线
+Plugin 'Yggdroot/indentLine'
+"自动补全
+Bundle 'Valloric/YouCompleteMe'
+"语法纠错，需配合pathogen食用，见.vimrc
+Bundle 'scrooloose/syntastic'
+"快速打开文件:Ctrl + p快捷键，输入文件名
+Bundle 'kien/ctrlp.vim'
+"内容搜索 :Ag [options] {pattern} [{directory}]，类似于grep -rn XX /directory/
+"使用ag前需手动安装ag：sudo apt-get install silversearcher-ag
+Bundle 'rking/ag.vim'
+"目录树
+Plugin 'scrooloose/nerdtree'
+"暗系皮肤
+Bundle 'tomasr/molokai'
+"文件结构展示 映射快捷键为F8
+Bundle 'majutsushi/tagbar'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-scripts repos on github
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"读写高权限文件，用法:SudoRead, :SudoWrite
+Bundle 'SudoEdit.vim'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"not github repos
+"example: Bundle 'git://git.wincent.com/command-t.git'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+filetype on
